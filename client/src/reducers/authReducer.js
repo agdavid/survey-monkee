@@ -1,7 +1,9 @@
 // create and export reducer
-export default function (state = {}, action) {
+const authReducer = (state = {}, action) => {
   switch (action.type) {
     default:
       return state;
   }
-}
+};
+
+export default authReducer;
