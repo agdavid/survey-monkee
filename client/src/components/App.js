@@ -2,10 +2,8 @@
 import React from "react";
 // import the router brain (look at URL and handle component display)
 import { BrowserRouter, Route } from "react-router-dom";
+import Header from "./Header";
 
-const Header = () => {
-  return <h2>Header</h2>;
-};
 const Dashboard = () => {
   return <h2>Dashboard</h2>;
 };
@@ -21,6 +19,7 @@ const App = () => {
     <div>
       <BrowserRouter>
         <div>
+          <Header />
           <Route exact={true} path="/" component={Landing} />
           <Route exact={true} path="/surveys" component={Dashboard} />
           <Route path="/surveys/new" component={SurveyNew} />
