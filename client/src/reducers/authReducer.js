@@ -1,5 +1,6 @@
 // create and export reducer
 const authReducer = (state = {}, action) => {
+  console.log(action);
   switch (action.type) {
     default:
       return state;
