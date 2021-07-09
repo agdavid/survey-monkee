@@ -5,12 +5,13 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
 import { createStore, applyMiddleware } from "redux";
+import reduxThunk from "redux-thunk";
 
 import App from "./components/App";
 import reducers from "./reducers";
 
 // redux store at top-level of application
-const store = createStore(reducers, {}, applyMiddleware());
+const store = createStore(reducers, {}, applyMiddleware(reduxThunk));
 
 // wrap App in Provider so all children components have access to store
 ReactDOM.render(
