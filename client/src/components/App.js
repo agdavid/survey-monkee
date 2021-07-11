@@ -7,15 +7,12 @@ import { connect } from "react-redux";
 
 import * as actions from "../actions";
 import Header from "./Header";
-
+import Landing from "./Landing";
 const Dashboard = () => {
   return <h2>Dashboard</h2>;
 };
 const SurveyNew = () => {
   return <h2>SurveyNew</h2>;
-};
-const Landing = () => {
-  return <h2>Landing</h2>;
 };
 
 class App extends Component {
