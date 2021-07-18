@@ -1,5 +1,7 @@
 # credentials
 dev.js
+.env.development
+.env.production
 
 # Logs
 logs
