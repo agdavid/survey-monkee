@@ -16,6 +16,10 @@ module.exports = (app) => {
       title,
       subject,
       body,
+      // create array of email recipients
+      recipients: recipients.split(",").map((email) => {
+        return { email };
+      }),
     });
   });
 };
