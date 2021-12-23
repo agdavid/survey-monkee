@@ -18,8 +18,10 @@ module.exports = (app) => {
       body,
       // create array of email recipients
       recipients: recipients.split(",").map((email) => {
-        return { email };
+        return { email: email.trim() };
       }),
+      _user: req.user.id,
+      dateSent: Date.now(),
     });
   });
 };
