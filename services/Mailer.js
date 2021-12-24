@@ -9,6 +9,32 @@ class Mailer extends helper.Mail {
     this.subject = subject;
     this.body = new helper.Content("text/html", content);
     this.recipients = this.formatAddresses(recipients);
+
+    this.addContent(this.body); // function from sendgrid Mail class
+    this.addClickTracking();
+    this.addRecipients();
+  }
+
+  formatAddresses(recipients) {
+    return recipients.map((recipient) => {
+      return new helper.Email(recipient.email);
+    });
+  }
+
+  addClickTracking() {
+    const trackingSettings = new helper.TrackingSettings(); // functions from sendgrid Mail class
+    const clickTracking = new helper.ClickTracking(true, true); // functions from sendgrid Mail class
+
+    trackingSettings.setClickTracking(clickTracking);
+    this.addTrackingSettings(trackingSettings);
+  }
+
+  addRecipients() {
+    const personalize = new helper.Personalization();
+    this.recipients.forEach((recipient) => {
+      personalize.addTo(recipient);
+    });
+    this.addPersonalization(personalize); // functions from sendgrid Mail class
   }
 }
 
